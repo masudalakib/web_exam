@@ -1,4 +1,4 @@
-// function sum(){
+g// function sum(){
 //     let numbers = document.getElementById('input').value;
 
 //     let sum =0;
