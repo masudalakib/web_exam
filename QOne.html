@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Height (cm) <input type="text" id="height" value=""><br><br>
+Weight (lb) <input type="text" id="weight" value=""><br><br>
+
+<button style="background-color: black; color: white" onclick="calculateResult()">Calculate</button>
+
+<br><br>
+
+Calculation Result: <span id="result"></span><br><br>
+Status: <span id="status"></span>
+
+<script>
+	function calculateResult() {
+		var heightCM = document.getElementById("height").value;
+        var weightLB = document.getElementById("weight").value;
+        var heightM = Number(heightCM)/100;
+        var weightKG = Number(weightLB)/2.2046;
+        var result = weightKG/(heightM*heightM);
+        
+        document.getElementById("result").innerHTML = result.toPrecision(4);
+
+        if (result > 0 && result < 20) {
+        	document.getElementById("status").innerHTML = "bad";
+        }
+        else if (result > 20 && result <= 30) {
+        	document.getElementById("status").innerHTML = "not bad";
+        }
+        else {
+        	document.getElementById("status").innerHTML = "not good";
+        }
+	}
+</script>
+</body>
+</html>
